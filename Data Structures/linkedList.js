@@ -43,19 +43,30 @@ LinkedList.prototype.removeTail = function() {
   else this.head = null;
 };
 
-// Linked List Object
-let linkedList = new LinkedList();
+// Search
+LinkedList.prototype.search = function(searchValue) {
+  let currentNode = this.head;
+  while (currentNode) {
+    if (searchValue === currentNode.value) {
+      return currentNode.value;
+    }
 
-// Add To Head
-linkedList.addToHead(10);
+    currentNode = currentNode.next;
+  }
+  return null;
+};
 
-// Add To Tail
-linkedList.addToTail(20);
-
-// Remove Head
-linkedList.removeHead();
-
-// Remove Tail
-linkedList.removeTail();
-
-console.log(linkedList);
+// Index of
+LinkedList.prototype.indexOf = function(value) {
+  let currentNode = this.head;
+  let indexes = [];
+  let currentIndex = 0;
+  while (currentNode) {
+    if (value === currentNode.value) {
+      indexes.push(currentIndex);
+    }
+    currentNode = currentNode.next;
+    currentIndex++;
+  }
+  return indexes;
+};
