@@ -27,13 +27,16 @@ BinarySearchTree.prototype.contains = function(value) {
 };
 
 // Depth First Traversal
-BinarySearchTree.prototype.depthFirstTraversal = function(value) {};
+BinarySearchTree.prototype.depthFirstTraversal = function(order) {
+  if (order === "preorder") console.log(this.value);
+  if (this.left) this.left.depthFirstTraversal(order);
+  if (order === "inorder") console.log(this.value);
+  if (this.right) this.right.depthFirstTraversal(order);
+  if (order === "postorder") console.log(this.value);
+};
 
 // Binary Search Tree Object
 let bst = new BinarySearchTree(20);
 bst.insert(10);
 bst.insert(30);
 bst.insert(40);
-bst.insert(30);
-
-console.log(bst.contains(100));
