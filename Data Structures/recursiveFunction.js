@@ -29,4 +29,3 @@ function FizzBuzz(num, firstMultiple, secondMultiple) {
   }
   return false;
 }
-FizzBuzz(100, 3, 5);

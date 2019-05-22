@@ -35,8 +35,25 @@ BinarySearchTree.prototype.depthFirstTraversal = function(order) {
   if (order === "postorder") console.log(this.value);
 };
 
-// Binary Search Tree Object
-let bst = new BinarySearchTree(20);
-bst.insert(10);
-bst.insert(30);
-bst.insert(40);
+// Breadth First Traversal
+BinarySearchTree.prototype.breadthFirstTraversal = function() {
+  let queue = [this];
+  while (queue.length) {
+    let firstNode = queue.shift();
+    console.log(firstNode.value);
+    if (firstNode.left) queue.push(firstNode.left);
+    if (firstNode.right) queue.push(firstNode.right);
+  }
+};
+
+// Get Minimum Value
+BinarySearchTree.prototype.getMinVal = function() {
+  if (this.left) this.left.getMinVal();
+  else console.log(this.value);
+};
+
+// Get Maximum Value
+BinarySearchTree.prototype.getMaxVal = function() {
+  if (this.right) this.right.getMaxVal();
+  else console.log(this.value);
+};
