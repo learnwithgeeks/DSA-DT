@@ -1,1 +1,1 @@
-# Repository of JavaScript examples for data structure's , algorithms and design pattern
+# Repository of JavaScript examples for data structure's , algorithms,OOP and design pattern
